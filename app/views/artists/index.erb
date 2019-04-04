@@ -1,0 +1,8 @@
+<h1>LIST OF ARTISTS</h1>
+
+<ul>
+    <% final_artists = @artists.map{|i| i.name}.uniq%>
+    <% final_artists.each do |artist|%>
+    <li><%= artist%></li>
+<% end %>
+</ul>
