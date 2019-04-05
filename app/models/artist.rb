@@ -8,8 +8,7 @@ class Artist < ActiveRecord::Base
   # extend Slugify::ClassMethods
 
   def self.find_by_slug(slug)
-    deslug = slug.gsub!('-',' ')
-    Artist.find_by('lower(name) = ?', deslug)
+    Artist.find_by('lower(name) = ?', slug.gsub('-',' '))
   end
 
 end

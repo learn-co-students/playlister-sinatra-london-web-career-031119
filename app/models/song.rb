@@ -7,8 +7,7 @@ class Song < ActiveRecord::Base
   # extend Slugify::ClassMethods
 
   def self.find_by_slug(slug)
-    deslug = slug.gsub!('-',' ')
-    Song.find_by('lower(name) = ?', deslug)
+    Song.find_by('lower(name) = ?', slug.gsub('-',' '))
   end
 
 

@@ -3,9 +3,13 @@ module Slugify
   module InstanceMethods
 
     def slug
-      self.name.gsub!(/[^0-9A-Za-z ]/, '')
-      self.name.gsub!(' ','-')
-      self.name.downcase
+      slug = self.name.gsub(/[^0-9A-Za-z ]/, '')
+      slug.gsub!(' ','-')
+      slug.downcase
+    end
+
+    def deslug
+      self.name.gsub('-',' ')
     end
 
   end

@@ -7,8 +7,7 @@ class Genre < ActiveRecord::Base
   # extend Slugify::ClassMethods
 
   def self.find_by_slug(slug)
-    deslug = slug.gsub!('-',' ')
-    Genre.find_by('lower(name) = ?', deslug)
+    Genre.find_by('lower(name) = ?', slug.gsub('-',' '))
   end
 
 end
