@@ -9,9 +9,7 @@ class Artist < ActiveRecord::Base
 
   def self.find_by_slug(slug)
     deslug = slug.gsub!('-',' ')
-    names = Artist.all.map(&:name)
-    binding.pry
-    names.find{|n|n.downcase == deslug}
+    Artist.find_by('lower(name) = ?', deslug)
   end
 
 end
