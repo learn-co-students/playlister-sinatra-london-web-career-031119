@@ -1,15 +1,15 @@
 require './config/environment'
 
 require_relative "./app/controllers/artists_controller"
-# require_relative "./app/controllers/GenresController"
-# require_relative "./app/controllers/SongsController"
+# require_relative "./app/controllers/genres_controller"
+require_relative "./app/controllers/songs_controller"
 begin
   fi_check_migration
 
   use Rack::MethodOverride
   run ApplicationController
   use ArtistsController
-  # use SongsController
+  use SongsController
   # use GenresController
 rescue ActiveRecord::PendingMigrationError => err
   STDERR.puts err
