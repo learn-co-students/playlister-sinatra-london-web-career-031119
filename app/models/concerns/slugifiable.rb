@@ -1,11 +1,13 @@
 module Slug
-
-  def slug
-    self.name.downcase.gsub(" ", "-")
+  module InstanceMethods
+    def slug
+      self.name.downcase.gsub(" ", "-")
+    end
   end
 
-  def self.find_by_slug(slug)
-    self.all.find{|artist| artist.slug == slug}
+  module ClassMethods
+    def find_by_slug(slug)
+      self.all.find{|artist| artist.slug == slug}
+    end
   end
-
 end
