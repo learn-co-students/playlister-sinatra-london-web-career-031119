@@ -1,0 +1,25 @@
+<!--#/songs/:slug/edit
+    #changing a song's artist
+    #  updates the song's artist (FAILED - 1)
+    #  renders to the song show page (FAILED - 2)
+    #changing a song's genres
+      #has a checkbox element on the form (FAILED - 3)
+      #updates the song's genres (FAILED - 4)
+      #renders to the song show page (FAILED - 5)-->
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+<form method="POST" action="/songs/<%=@song.slug%>">
+  <h4><%=@song.name%></h4>
+  <input type="hidden", name="_method" value="PATCH"/>
+  <label>Artist</label>
+  <input type="text" name="artist_name" id="Artist Name" placeholder="<%=@song.artist.name%>">
+  <br>
+  <label>Song genres</label>
+  <%Genre.all.each do |genre|%>
+    <li>
+      <input type="checkbox" name="genres[]" value="<%=genre.id%>" id="<%=genre.name%>" <%="checked" if @song.genres.include?(genre) %> ><%=genre.name%>
+    </li>
+  <%end%>
+  <button type="submit" id="Save">Save</button>
+</form>

@@ -1,0 +1,34 @@
+<!--    /artists
+      responds with a 200 status code (FAILED - 4)
+      displays a list of artists (FAILED - 5)
+      contains links to each artist's show page (FAILED - 6)-->
+<%@artists.each do |artist|%>
+  <a href="/artists/<%=artist.slug%>">
+    <li><%= artist.name %></li>
+  </a>
+<%end%>
+<!--Playlister Basics
+  index pages
+    /songs
+      responds with a 200 status code (FAILED - 1)
+      displays a list of songs (FAILED - 2)
+      contains links to each song's show page (FAILED - 3)
+
+    /genres
+      responds with a 200 status code (FAILED - 7)
+      displays a list of genres (FAILED - 8)
+      contains links to each genre's show page (FAILED - 9)
+  show pages
+    /songs/:slug
+      responds with a 200 status code (FAILED - 10)
+      displays the song's artist (FAILED - 11)
+      displays the song's genres (FAILED - 12)
+      contains links to the artist's show page (FAILED - 13)
+      contains links to each genre's show page (FAILED - 14)
+    
+    /genres/:slug
+      responds with a 200 status code (FAILED - 20)
+      displays the genre's artists (FAILED - 21)
+      displays the genre's songs (FAILED - 22)
+      contains links to each artist's show page (FAILED - 23)
+      contains links to each song's show page (FAILED - 24)-->

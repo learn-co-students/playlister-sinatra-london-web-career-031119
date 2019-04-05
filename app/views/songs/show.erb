@@ -1,0 +1,17 @@
+<!--songs/:slug
+      responds with a 200 status code (FAILED - 1)
+      displays the song's artist (FAILED - 2)
+      displays the song's genres (FAILED - 3)
+      contains links to the artist's show page (FAILED - 4)
+      contains links to each genre's show page (FAILED - 5)-->
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+<p><%= @song.artist.name %></p>
+<p><%= @song.name %></p>
+<%@song.genres.each do |genre|%>
+  <a href="/genres/<%=genre.slug%>" >
+    <li><%= genre.name %></li>
+  </a>
+<%end%>
+<a href="/artists/<%=@song.artist.slug%>"><%=@song.artist.name%></a>
