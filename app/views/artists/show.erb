@@ -1,0 +1,16 @@
+<!--/artists/:slug
+      responds with a 200 status code (FAILED - 15)
+      displays the artist's songs (FAILED - 16)
+      displays the artist's genres (FAILED - 17)
+      contains links to each song's show page (FAILED - 18)
+      contains links to each genre's show page (FAILED - 19)-->
+<%@artist.songs.each do |song|%>
+  <a href="/songs/<%=song.slug%>" >
+    <li><%= song.name %></li>
+  </a>
+<%end%>
+<%@artist.genres.each do |genre|%>
+  <a href="/genres/<%=genre.slug%>" >
+    <li><%= genre.name %></li>
+  </a>
+<%end%>
