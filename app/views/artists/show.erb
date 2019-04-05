@@ -1,13 +1,5 @@
-<h1><%=@single_artist.name%></h1>
-<% @single_artist.songs.each do |song| %>
-<li><strong>Song:</strong> <%=song.name%></li>
+<h1><%=@artist.name%></h1>
+
+<% @artist.songs.each do |song| %>
+<li><%=song.name%></li>
 <% end %>
-
-<%@single_artist.genres.each do |genres|%>
-<li><strong>Genre:</strong> <%=genres.name%></li>
-<%end%>
-
-<%# @single_artist.each do |artist|
-  artist.each {|song| song.name}
-  artist.genres
-end %>
