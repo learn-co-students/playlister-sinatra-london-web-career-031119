@@ -1,0 +1,9 @@
+<h1>Hey! Here is the list of all the artists you asked mate ;)</h1>
+
+<ol>
+  <%@all_artists.each do |artist|%>
+  <a href="/artists/<%=artist.slug%>">
+    <li><%=artist.name%></li>
+  </a>
+  <%end%>
+</ol>
